@@ -221,7 +221,13 @@ Requirements:
                 {/* Editor / Preview */}
                 <div className="h-full">
                   {tab === 1 ? (
-                    <Editor value={code} height="100%" theme='vs-dark' language="html" />
+                    <Editor
+                            value={code}
+                            height="100%"
+                            theme="vs-dark"
+                            language="html"
+                            onChange={(value) => setCode(value || "")}
+                      />
                   ) : (
                     <iframe key={refreshKey} srcDoc={code} className="w-full h-full bg-white text-black"></iframe>
                   )}
